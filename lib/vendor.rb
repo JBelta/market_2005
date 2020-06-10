@@ -7,10 +7,14 @@ class Vendor
   end
 
   def check_stock(item)
-    if @inventory.any?(item) == false
-      0
-    elsif
-        @invenctory.values_at(item)
-    end
+    if @inventory == {}
+      @inventory.count
+    else
+     @inventory[item]
+   end
+  end
+
+  def stock(item, amount)
+    @inventory[item] += amount
   end
 end
