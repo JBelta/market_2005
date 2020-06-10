@@ -1,4 +1,6 @@
-class Vendor
+require './lib/item'
+
+class Vendor < Item
   attr_reader :name, :inventory
 
   def initialize(name)
@@ -16,5 +18,10 @@ class Vendor
 
   def stock(item, amount)
     @inventory[item] += amount
+  end
+
+  def potential_revenue
+    count = @inventory.values.map{|value| value}
+    price = vendor1.inventory.keys.map{|item| item.price}
   end
 end
