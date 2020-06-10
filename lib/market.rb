@@ -15,4 +15,8 @@ class Market < Vendor
   def vendor_names
     @vendors.map{|vendor| vendor.name}
   end
+
+  def vendors_that_sell(item)
+    @vendors.map{|vendor| vendor if vendor.check_stock(item) > 0}.compact
+  end
 end
