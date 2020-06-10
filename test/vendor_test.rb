@@ -28,7 +28,11 @@ class VendorTest < Minitest::Test
     #require 'pry'; binding.pry
     assert_equal ({item1 => 30}), vendor.inventory
     assert_equal 30, vendor.check_stock(item1)
+require 'pry'; binding.pry
+    vendor.stock(item1, 25)
+    assert_equal 55, vendor.check_stock(item1)
   end
+
 end
 
 
