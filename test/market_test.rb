@@ -80,6 +80,8 @@ class MarketTest < Minitest::Test
 
     #require 'pry'; binding.pry
     assert_equal 29.75, vendor1.potential_revenue
+    assert_equal 345.00, vendor2.potential_revenue
+    assert_equal 48.75, vendor3.potential_revenue
   end
 end
 
