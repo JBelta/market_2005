@@ -7,14 +7,10 @@ class ItemTest < Minitest::Test
   item1 = Item.new({name: 'Peach', price: "$0.75"})
   assert_instance_of Item, item1
   end
+
+  def test_it_has_attributes
+    item2 = Item.new({name: 'Tomato', price: '$0.50'})
+    assert_equal "Tomato", item2.name
+    assert_equal 0.50, item2.price
+  end
 end
-#=> #<Item:0x007f9c56740d48...>
-
- #item2 = Item.new({name: 'Tomato', price: '$0.50'})
-#=> #<Item:0x007f9c565c0ce8...>
-
- #item2.name
-#=> "Tomato"
-
- #item2.price
-#=> 0.50
