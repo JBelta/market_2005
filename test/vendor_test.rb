@@ -7,14 +7,13 @@ class VendorTest < Minitest::Test
     vendor = Vendor.new("Rocky Mountain Fresh")
     assert_instance_of Vendor, vendor
   end
+
+  def test_it_has_attributes
+    vendor = Vendor.new("Rocky Mountain Fresh")
+    assert_equal "Rocky Mountain Fresh", vendor.name
+    assert_equal ({}), vendor.inventory
+  end
 end
-#=> #<Vendor:0x00007f85683152f0...>
-
-# vendor.name
-#=> "Rocky Mountain Fresh"
-
-# vendor.inventory
-#=> {}
 
 # vendor.check_stock(item1)
 #=> 0
