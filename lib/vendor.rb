@@ -21,7 +21,10 @@ class Vendor < Item
   end
 
   def potential_revenue
-    count = @inventory.values.map{|value| value}
-    price = vendor1.inventory.keys.map{|item| item.price}
+    total = 0
+    @inventory.each do |item, amount|
+      total += item.price * amount
+    end
+    total
   end
 end

@@ -78,7 +78,7 @@ class MarketTest < Minitest::Test
     market.add_vendor(vendor2)
     market.add_vendor(vendor3)
 
-    require 'pry'; binding.pry
+    #require 'pry'; binding.pry
     assert_equal 29.75, vendor1.potential_revenue
   end
 end
