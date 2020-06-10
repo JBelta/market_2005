@@ -11,7 +11,7 @@ class Vendor
       @inventory.count
     else
      @inventory[item]
-   end
+    end
   end
 
   def stock(item, amount)
