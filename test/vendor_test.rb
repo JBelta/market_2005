@@ -1,4 +1,5 @@
 require './lib/vendor'
+require './lib/item'
 require 'minitest/pride'
 require 'minitest/autorun'
 
@@ -12,6 +13,13 @@ class VendorTest < Minitest::Test
     vendor = Vendor.new("Rocky Mountain Fresh")
     assert_equal "Rocky Mountain Fresh", vendor.name
     assert_equal ({}), vendor.inventory
+  end
+
+  def test_check_stock
+    vendor = Vendor.new("Rocky Mountain Fresh")
+    item1 = Item.new({name: 'Peach', price: "$0.75"})
+    #require 'pry'; binding.pry
+    assert_equal 0, vendor.check_stock(item1)
   end
 end
 
